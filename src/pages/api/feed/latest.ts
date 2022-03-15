@@ -19,6 +19,7 @@ export default async function start(req: any, res: any) {
     const feed = await parser.parseURL(PODCAST_RSS_FEED!);
     const episodes = [];
 
+    // This depends on the RSS being sorted from newest - oldest episodes
     for (const f of feed.items) {
       if (
         episodes.length > 0 &&
