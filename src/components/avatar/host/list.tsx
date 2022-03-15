@@ -12,7 +12,7 @@ export const HostAvatarList: React.FC = () => {
     {
       firstName: "joseph",
       lastName: "micceri",
-      memoji: "roger-memoji",
+      memoji: "joseph-memoji",
     },
     {
       firstName: "george",
