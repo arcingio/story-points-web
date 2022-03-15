@@ -4,7 +4,11 @@ import Head from "next/head";
 import { ListOfPodcatPlatforms } from "../components/podcast-platform/list";
 import { HostAvatarList } from "../components/avatar/host/list";
 
-const Home: NextPage = () => {
+interface HomePageProps {
+  latestEpisodes: [];
+}
+
+const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
   return (
     <Box>
       <Head>
@@ -46,6 +50,14 @@ const Home: NextPage = () => {
       </Box>
     </Box>
   );
+};
+
+export const getServerSideProps = () => {
+  return {
+    props: {
+      latestEpisodes: [],
+    },
+  };
 };
 
 export default Home;
