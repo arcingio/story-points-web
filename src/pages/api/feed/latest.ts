@@ -20,8 +20,11 @@ export default async function start(req: any, res: any) {
     const episodes = [];
 
     for (const f of feed.items) {
-      console.log(f);
-      if (f.title && f.title.toLowerCase().includes("retro")) {
+      if (
+        episodes.length > 0 &&
+        f.title &&
+        f.title.toLowerCase().includes("retro")
+      ) {
         break;
       }
 
