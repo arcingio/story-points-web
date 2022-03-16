@@ -3,4 +3,14 @@ export interface HostInfo {
   lastName: string;
 }
 
-export interface LatestFeedAPIResponse {}
+export interface EpisodeAudioDetails {
+  url: string;
+  type: string;
+  duration: number;
+}
+export interface Episode {
+  title: string;
+  publishDate: string;
+  description: string;
+  audio: EpisodeAudioDetails;
+}
