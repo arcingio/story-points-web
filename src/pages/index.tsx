@@ -1,11 +1,15 @@
 import { Box, Heading } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import axios from "axios";
+
 import { ListOfPodcatPlatforms } from "../components/podcast-platform/list";
 import { HostAvatarList } from "../components/avatar/host/list";
+import { Episode } from "../types";
+import { EpisodeList } from "../components/card/episode/list";
 
 interface HomePageProps {
-  latestEpisodes: [];
+  latestEpisodes: Episode[];
 }
 
 const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
@@ -42,20 +46,25 @@ const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
         </Box>
       </Box>
       <Box
+        display="flex"
+        flexDir="column"
         minHeight="300px"
         paddingX={["20px", "20px", "60px", "150px"]}
         paddingY={["100px"]}
+        gap="10"
       >
         <Heading size="2xl">Latest episodes</Heading>
+        <EpisodeList episodes={latestEpisodes} withViewAllBtn={true} />
       </Box>
     </Box>
   );
 };
 
-export const getServerSideProps = () => {
+export const getServerSideProps = async () => {
+  const { data } = await axios.get("http://localhost:3000/api/feed/latest");
   return {
     props: {
-      latestEpisodes: [],
+      latestEpisodes: data || [],
     },
   };
 };
