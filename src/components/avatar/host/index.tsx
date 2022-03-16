@@ -2,7 +2,15 @@ import { Box, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 import { HostInfo } from "../../../types";
 
-export const HostAvatar: React.FC<HostInfo> = ({ firstName }) => {
+interface HostAvatarProps {
+  host: HostInfo;
+  withLastName: boolean;
+}
+
+export const HostAvatar: React.FC<HostAvatarProps> = ({
+  host: { firstName, lastName },
+  withLastName,
+}) => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <Image
@@ -11,7 +19,7 @@ export const HostAvatar: React.FC<HostInfo> = ({ firstName }) => {
         height="150px"
       />
       <Heading size="md" textTransform="capitalize">
-        {firstName}
+        {firstName} {withLastName && lastName}
       </Heading>
     </Box>
   );
