@@ -1,34 +1,18 @@
 import { Box } from "@chakra-ui/react";
 import { HostAvatar } from ".";
+import { hosts } from "../../../constants";
 
 export const HostAvatarList: React.FC = () => {
-  //TODO: Remove hard code
-  const hosts = [
-    {
-      firstName: "roger",
-      lastName: "king",
-      memoji: "roger-memoji",
-    },
-    {
-      firstName: "joseph",
-      lastName: "micceri",
-      memoji: "joseph-memoji",
-    },
-    {
-      firstName: "george",
-      lastName: "markantonis",
-      memoji: "roger-memoji",
-    },
-    {
-      firstName: "greg",
-      lastName: "meade",
-      memoji: "roger-memoji",
-    },
-  ];
   return (
     <Box flexDirection="row" display="flex" justifyContent="space-evenly">
       {hosts.map((h) => {
-        return <HostAvatar {...h} key={`${h.firstName}-avatar`} />;
+        return (
+          <HostAvatar
+            host={h}
+            withLastName={false}
+            key={`${h.firstName}-avatar`}
+          />
+        );
       })}
     </Box>
   );
