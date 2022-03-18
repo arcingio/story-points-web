@@ -50,22 +50,22 @@ export const NavBar: React.FC = () => {
         >
           <Box display="flex" flexDirection="row" gap={4}>
             <NextLink href="/" passHref={true}>
-              <Link size="md" m="0" color={linkColor}>
+              <Link fontSize="20px" m="0" color={linkColor}>
                 Home
               </Link>
             </NextLink>
             <NextLink href="/all-episodes" passHref={true}>
-              <Link size="md" m="0" color={linkColor}>
+              <Link fontSize="20px" m="0" color={linkColor}>
                 All Episodes
               </Link>
             </NextLink>
             <NextLink href="/about" passHref={true}>
-              <Link size="md" m="0" color={linkColor}>
+              <Link fontSize="20px" m="0" color={linkColor}>
                 About
               </Link>
             </NextLink>
             <NextLink href="/subscribe" passHref={true}>
-              <Link size="md" m="0" color={linkColor}>
+              <Link fontSize="20px" m="0" color={linkColor}>
                 Subscribe
               </Link>
             </NextLink>
