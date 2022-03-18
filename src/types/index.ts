@@ -14,3 +14,8 @@ export interface Episode {
   description: string;
   audio: EpisodeAudioDetails;
 }
+
+export enum HostAvatarImageTypes {
+  "default.png",
+  "hover.png",
+}

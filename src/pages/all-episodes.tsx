@@ -10,8 +10,12 @@ interface AllEpisodesPageProps {
 
 const AllEpisodesPage: NextPage<AllEpisodesPageProps> = ({ episodes }) => {
   return (
-    <Box paddingY="10" minHeight="70vh">
-      <EpisodeList episodes={episodes} />
+    <Box
+      paddingY="10"
+      minHeight="70vh"
+      paddingX={["20px", "20px", "60px", "150px"]}
+    >
+      <EpisodeList episodes={episodes} withImages={false} />
     </Box>
   );
 };

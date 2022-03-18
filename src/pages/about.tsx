@@ -15,12 +15,11 @@ const AboutPage: NextPage = () => {
       minHeight="70vh"
     >
       <Box width="70vw" fontSize="lg">
-        Story Points is brought to you by a group of friends who are want to
-        help others get more knowledge of working in the tech industry. Roger,
-        Joe, and George are Software Engineers with experience from all
-        industries and stages of start ups. No matter your level of experience,
-        we take our stories and experience in hopes to help you navigate through
-        the tech industry.
+        Here at Story Points, we share personal anecdotes from within the tech
+        industry and help break it down for those who are not, with some
+        inevitable silliness in between. So whether you’re looking to get into
+        the field, already in the field, or just a tad curious about it, look no
+        further.
         <br /> <br />
         The Story Points podcast is recorded on a regular basis and releases new
         episodes on a bi-weekly basis.

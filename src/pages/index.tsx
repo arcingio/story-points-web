@@ -14,7 +14,7 @@ interface HomePageProps {
 
 const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
   return (
-    <Box>
+    <Box borderWidth={"1"}>
       <Head>
         <title>Story Points Podcast: Stories About Software Engineering</title>
         <meta
@@ -23,7 +23,6 @@ const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Box
         minHeight="70vh"
         bg="brand.500"
@@ -31,16 +30,21 @@ const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
         flexDirection="column"
         alignItems="center"
         justifyContent="space-evenly"
-        width="100%"
         color="white"
+        paddingX={["20px", "20px", "60px", "150px"]}
       >
-        <Box width="600px">
+        <Box width={["100%", "600px"]}>
           <Heading textShadow="2xl" size="2xl" wordBreak="break-word">
             A podcast to help the anybody learn more about the tech industry.
           </Heading>
         </Box>
         <HostAvatarList />
-        <Box width="600px" gap="6" display="flex" flexDirection="column">
+        <Box
+          width={["100%", "600px"]}
+          gap="6"
+          display="flex"
+          flexDirection="column"
+        >
           <Heading>Listen to Story Points on:</Heading>
           <ListOfPodcatPlatforms />
         </Box>
@@ -52,9 +56,14 @@ const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
         paddingX={["20px", "20px", "60px", "150px"]}
         paddingY={["100px"]}
         gap="10"
+        width="100%"
       >
         <Heading size="2xl">Latest episodes</Heading>
-        <EpisodeList episodes={latestEpisodes} withViewAllBtn={true} />
+        <EpisodeList
+          episodes={latestEpisodes}
+          withViewAllBtn={true}
+          withImages={true}
+        />
       </Box>
     </Box>
   );

@@ -20,3 +20,7 @@ export const hosts = [
     bio: "",
   },
 ];
+
+export const instagramURL = "https://www.instagram.com/story_points/";
+export const twitterURL = "https://twitter.com/story_points";
+export const tiktokURL = "https://www.tiktok.com/@story_points";

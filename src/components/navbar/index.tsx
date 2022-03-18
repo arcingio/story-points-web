@@ -9,6 +9,7 @@ import {
 import NextLink from "next/link";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
+import { SocialList } from "../socials";
 
 export const NavBar: React.FC = () => {
   const router = useRouter();
@@ -16,7 +17,7 @@ export const NavBar: React.FC = () => {
   const bg = isHome ? "white" : "brand.500";
   const headingColor = isHome ? "brand.500" : "white";
   const linkColor = isHome ? "black" : "white";
-  const [isMobile] = useMediaQuery("(max-width: 768px)");
+  const [isMobile] = useMediaQuery("(max-width: 820px)");
 
   return (
     <Box
@@ -25,11 +26,16 @@ export const NavBar: React.FC = () => {
       h={["150px", "150px"]}
       paddingX={["20px", "20px", "60px", "150px"]}
       paddingY={["10px"]}
-      justifyContent={["space-between", "start"]}
+      justifyContent={["space-between"]}
       alignItems="center"
       gap={[0, 6]}
     >
-      <Heading color={headingColor} size="3xl" width="20%">
+      <Heading
+        color={headingColor}
+        fontSize={["50px"]}
+        wordBreak="keep-all"
+        display="inline"
+      >
         Story Points
       </Heading>
       {isMobile ? (
@@ -37,7 +43,7 @@ export const NavBar: React.FC = () => {
       ) : (
         <Box
           display="flex"
-          width="80%"
+          width="60%"
           flexDirection="row"
           alignItems="center"
           justifyContent="space-between"
@@ -64,28 +70,7 @@ export const NavBar: React.FC = () => {
               </Link>
             </NextLink>
           </Box>
-          <Box display="flex" gap="4">
-            <Image
-              src="/images/socials/instagram.png"
-              width="25px"
-              height="25px"
-            />
-            <Image
-              src="/images/socials/twitter.png"
-              width="25px"
-              height="25px"
-            />
-            <Image
-              src="/images/socials/tik-tok.png"
-              width="25px"
-              height="25px"
-            />
-            <Image
-              src="/images/socials/youtube.png"
-              width="25px"
-              height="25px"
-            />
-          </Box>
+          <SocialList />
         </Box>
       )}
     </Box>
