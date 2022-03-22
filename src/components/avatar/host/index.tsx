@@ -13,19 +13,7 @@ export const HostAvatar: React.FC<HostAvatarProps> = ({
   withLastName,
   imageName = "default.png",
 }) => {
-  const [internalImageName, setInternalImageName] = useState(imageName);
-
-  useEffect(() => {
-    setInterval(() => {
-      console.log(internalImageName);
-      if (internalImageName === "default.png") {
-        console.log("running");
-        setInternalImageName("hover.png");
-      } else {
-        setInternalImageName("default.png");
-      }
-    }, 5000);
-  }, [internalImageName]);
+  const [internalImageName] = useState(imageName);
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
