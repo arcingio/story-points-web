@@ -14,6 +14,7 @@ const SubscribePage: NextPage<SubscribePageProps> = () => {
       justifyContent="start"
       gap="8"
       marginY="10"
+      paddingX={["20px", "20px", "60px", "150px"]}
     >
       <Box
         display="flex"
