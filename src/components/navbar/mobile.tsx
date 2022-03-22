@@ -88,7 +88,10 @@ export const MobileNavigationBar: React.FC = () => {
           width="100%"
           gap={6}
         >
-          <NavigationLinks withDivider={true} />
+          <NavigationLinks
+            withDivider={true}
+            onChange={() => setDisplay("none")}
+          />
           <SocialList />
         </Flex>
       </Flex>
