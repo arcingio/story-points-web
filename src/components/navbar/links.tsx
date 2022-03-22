@@ -23,10 +23,12 @@ const links = [
 interface NavigationLinksProps {
   withDivider: boolean;
   isMobile?: boolean;
+  linkColor?: string;
 }
 export const NavigationLinks: React.FC<NavigationLinksProps> = ({
   withDivider,
   isMobile = true,
+  linkColor = "black",
 }) => {
   const flexDir = isMobile ? "column" : "row";
   const justifyContent = isMobile ? "start" : "center";
@@ -43,7 +45,7 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
         return (
           <>
             <NextLink href={link.href} passHref={true}>
-              <Link fontSize="20px" m="0" color="black">
+              <Link fontSize="20px" m="0" color={linkColor}>
                 {link.title}
               </Link>
             </NextLink>

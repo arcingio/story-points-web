@@ -29,7 +29,11 @@ export const DesktopNavigationBar: React.FC = () => {
       >
         Story Points
       </Heading>
-      <NavigationLinks withDivider={false} isMobile={false} />
+      <NavigationLinks
+        withDivider={false}
+        isMobile={false}
+        linkColor={linkColor}
+      />
       <SocialList />
     </Box>
   );
