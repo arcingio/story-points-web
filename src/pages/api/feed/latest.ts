@@ -17,19 +17,30 @@ export default async function start(req: any, res: any) {
 
     const parser = new Parser();
     const feed = await parser.parseURL(PODCAST_RSS_FEED!);
+    const episodes = [];
 
-    const episodes = feed.items.map((item) => {
-      return {
-        title: item.title,
-        publishDate: item.isoDate,
-        description: item.contentSnippet,
+    // This depends on the RSS being sorted from newest - oldest episodes
+    for (const f of feed.items) {
+      if (
+        episodes.length > 0 &&
+        f.title &&
+        f.title.toLowerCase().includes("retro")
+      ) {
+        break;
+      }
+
+      episodes.push({
+        title: f.title,
+        publishDate: f.isoDate,
+        description: f.contentSnippet,
         audio: {
-          url: item.enclosure?.url,
-          type: item.enclosure?.type,
-          duration: item.enclosure?.length,
+          url: f.enclosure?.url,
+          type: f.enclosure?.type,
+          duration: f.enclosure?.length,
         },
-      };
-    });
+      });
+    }
+
     res.json(episodes);
     return;
   }
