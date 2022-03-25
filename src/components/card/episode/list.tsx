@@ -14,13 +14,7 @@ export const EpisodeList: React.FC<EpisodeListProps> = ({
   withImages,
 }) => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      gap="10"
-      width="100%"
-    >
+    <Box flexDirection="column" alignItems="center" gap="10" width="100%">
       {episodes.map((e, i) => {
         if (i === episodes.length - 1) {
           return (
@@ -35,7 +29,7 @@ export const EpisodeList: React.FC<EpisodeListProps> = ({
         return (
           <Box key={`${e.title}-container`}>
             <EpisodeCard episode={e} withImage={withImages} />
-            <Divider marginX="32" marginTop="10" />
+            <Divider marginTop="10" />
           </Box>
         );
       })}
