@@ -28,3 +28,5 @@ export const applePodcastURL =
 export const instagramURL = "https://www.instagram.com/story_points/";
 export const twitterURL = "https://twitter.com/story_points";
 export const tiktokURL = "https://www.tiktok.com/@story_points";
+export const fetcher = (...args: any) =>
+  fetch(...([args] as const)).then((res) => res.json());

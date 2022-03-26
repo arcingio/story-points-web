@@ -6,8 +6,7 @@ import useSWR from "swr";
 import { ListOfPodcatPlatforms } from "../components/podcast-platform/list";
 import { HostAvatarList } from "../components/avatar/host/list";
 import { EpisodeList } from "../components/card/episode/list";
-const fetcher = (...args: any) =>
-  fetch(...([args] as const)).then((res) => res.json());
+import { fetcher } from "../constants";
 
 const Home: NextPage<{}> = () => {
   const { data } = useSWR("/api/feed/latest", fetcher);
