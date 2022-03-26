@@ -1,18 +1,16 @@
 import { Box, Heading } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import axios from "axios";
+import useSWR from "swr";
 
 import { ListOfPodcatPlatforms } from "../components/podcast-platform/list";
 import { HostAvatarList } from "../components/avatar/host/list";
-import { Episode } from "../types";
 import { EpisodeList } from "../components/card/episode/list";
+const fetcher = (...args: any) =>
+  fetch(...([args] as const)).then((res) => res.json());
 
-interface HomePageProps {
-  latestEpisodes: Episode[];
-}
-
-const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
+const Home: NextPage<{}> = () => {
+  const { data } = useSWR("/api/feed/latest", fetcher);
   return (
     <Box borderWidth={"1"}>
       <Head>
@@ -59,23 +57,16 @@ const Home: NextPage<HomePageProps> = ({ latestEpisodes }) => {
         width="100%"
       >
         <Heading size="2xl">Latest episodes</Heading>
-        <EpisodeList
-          episodes={latestEpisodes}
-          withViewAllBtn={true}
-          withImages={true}
-        />
+        {data && (
+          <EpisodeList
+            episodes={data}
+            withViewAllBtn={true}
+            withImages={true}
+          />
+        )}
       </Box>
     </Box>
   );
-};
-
-export const getServerSideProps = async () => {
-  const { data } = await axios.get("http://localhost:3000/api/feed/latest");
-  return {
-    props: {
-      latestEpisodes: data || [],
-    },
-  };
 };
 
 export default Home;
