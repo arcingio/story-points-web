@@ -3,7 +3,7 @@ import { HostAvatar } from ".";
 import { hosts } from "../../../constants";
 
 export const HostAvatarList: React.FC = () => {
-  const imageOptions: any[] = ["default.png", "hover.png"];
+  const imageOptions: any[] = ["default.png"];
 
   return (
     <Box flexDirection="row" display="flex" justifyContent="space-evenly">
