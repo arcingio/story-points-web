@@ -3,6 +3,7 @@ dependencies:
   '@chakra-ui/react': 1.8.6_189e00a0932443dc19f4914207ca4c5f
   '@emotion/react': 11.8.1_a0c521d4794c7ad97f5f4c1c4a7d5818
   '@emotion/styled': 11.8.1_d24c5a2cd50724e2cbcff1306f0cc72d
+  '@typeform/embed-react': 1.14.0_react@17.0.2
   axios: 0.26.1
   framer-motion: 6.2.8_react-dom@17.0.2+react@17.0.2
   luxon: 2.3.1
@@ -1262,6 +1263,24 @@ packages:
     dev: true
     resolution:
       integrity: sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
+  /@typeform/embed-react/1.14.0_react@17.0.2:
+    dependencies:
+      '@typeform/embed': 1.34.2
+      fast-deep-equal: 3.1.3
+      react: 17.0.2
+    dev: false
+    engines:
+      node: '>=10'
+    peerDependencies:
+      react: '>=16.8.0'
+    resolution:
+      integrity: sha512-+PlG9F7Xf3BR/W/0EKwfG6xBhNXBX3swSiTYyVnXdN/PpdTqfaEIURLPXq+6Bqrpi+x00ur41H4y0nV1EJ4RVQ==
+  /@typeform/embed/1.34.2:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-sC3bzm1JQ3nZgS6fK/DeEyromQST5xHm+XBpkUNT5csoGmcHOyRQuUpf+SbXKrcMUyj2OHAklHQsIBN0Dwz1MA==
   /@types/json5/0.0.29:
     dev: true
     resolution:
@@ -2014,7 +2033,6 @@ packages:
     resolution:
       integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
   /fast-deep-equal/3.1.3:
-    dev: true
     resolution:
       integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
   /fast-glob/3.2.11:
@@ -3360,6 +3378,7 @@ specifiers:
   '@chakra-ui/react': ^1.8.6
   '@emotion/react': ^11
   '@emotion/styled': ^11
+  '@typeform/embed-react': ^1.14.0
   '@types/luxon': ^2.3.0
   '@types/node': 17.0.21
   '@types/react': 17.0.39

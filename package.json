@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@typeform/embed-react": "^1.14.0",
     "axios": "^0.26.1",
     "framer-motion": "^6",
     "luxon": "^2.3.1",

@@ -1,4 +1,5 @@
 import { Box, Button, Divider, Flex } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { EpisodeCard } from ".";
 import { Episode } from "../../../types";
 
@@ -13,6 +14,7 @@ export const EpisodeList: React.FC<EpisodeListProps> = ({
   withViewAllBtn,
   withImages,
 }) => {
+  const router = useRouter();
   return (
     <Box flexDirection="column" alignItems="center" gap="10" width="100%">
       {episodes.map((e, i) => {
@@ -40,9 +42,7 @@ export const EpisodeList: React.FC<EpisodeListProps> = ({
           alignItems="center"
           pt="10"
         >
-          <Button as="a" href="/all-episodes">
-            View All
-          </Button>
+          <Button onClick={() => router.push("/all-episodes")}>View All</Button>
         </Box>
       )}
     </Box>
