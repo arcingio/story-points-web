@@ -2,22 +2,22 @@ export const hosts = [
   {
     firstName: "roger",
     lastName: "king",
-    bio: "Roger has 10+ years of software engineering experience. Currently, Roger is working at a tech-fitness company called Balanced as their founding engineer.",
+    bio: "Roger has 10+ years of software engineering experience. Currently, Roger is working at a tech-fitness company called Balanced as their founding engineer. We are hiring (balanced not story points - we dont have funding)",
   },
   {
     firstName: "joseph",
     lastName: "micceri",
-    bio: "",
+    bio: "To the closet to the cloud! Joseph is a Senior Infrastructure EnginEER at SeatGeek. Shoutout SeatGeek.",
   },
   {
     firstName: "george",
     lastName: "markantonis",
-    bio: "",
+    bio: "Former Apple Genius, Almost Google Engineer. George is a Frontend Engineer at Capsule. He enjoys long walks on the beach while drinking a tall flat white. LEETCODE.",
   },
   {
     firstName: "greg",
     lastName: "meade",
-    bio: "",
+    bio: "The voice for the voiceless. The non-tech friend who asks the questions that all of you have. Follow 925Fitness.",
   },
 ];
 
