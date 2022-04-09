@@ -1,4 +1,4 @@
-import { Box, Button, Divider } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex } from "@chakra-ui/react";
 import { EpisodeCard } from ".";
 import { Episode } from "../../../types";
 
@@ -34,9 +34,16 @@ export const EpisodeList: React.FC<EpisodeListProps> = ({
         );
       })}
       {withViewAllBtn && (
-        <Button size="lg" as="a" href="/all-episodes">
-          View All
-        </Button>
+        <Box
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+          pt="10"
+        >
+          <Button as="a" href="/all-episodes">
+            View All
+          </Button>
+        </Box>
       )}
     </Box>
   );
